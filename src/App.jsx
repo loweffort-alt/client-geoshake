@@ -2,6 +2,7 @@ import * as React from "react";
 import Sidebar from "./components/sidebar/Sidebar";
 import MoreInfo from "./components/MoreInfo";
 import MainContent from "./components/content/MainContent";
+import Navbar from "./components/Navbar";
 
 const App = () => {
   const [apiData, setApiData] = React.useState(null);
@@ -30,13 +31,18 @@ const App = () => {
   }, []);
 
   return (
-    <div className="flex w-full justify-around h-full" id="home">
-      <div className="w-full flex justify-between border-[#ededed] border-t-2">
-        <Sidebar apiData={apiData} />
-        <MainContent apiData={apiData} />
-        <MoreInfo />
+    <>
+      <div id="home">
+        <Navbar />
+        <div className="flex w-full justify-around h-full">
+          <div className="w-full flex justify-between border-[#ededed] border-t-2">
+            <Sidebar apiData={apiData} />
+            <MainContent apiData={apiData} />
+            <MoreInfo />
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
