@@ -3,13 +3,10 @@ import * as React from "react";
 
 const Search = ({ updateLink }) => {
   const inputRef = React.useRef(null);
-  const [searchLink, setSearchLink] = React.useState("http://127.0.0.1:3000");
 
   function handleChange(event) {
     const newLink = event.target.value;
-    setSearchLink(newLink);
-
-    updateLink(newLink);
+    console.log(newLink);
   }
 
   function focusInput() {
@@ -26,7 +23,7 @@ const Search = ({ updateLink }) => {
           <input
             type="text"
             placeholder="Search"
-            value={searchLink}
+            value=""
             onChange={handleChange}
             ref={inputRef}
             className="!outline-none border-none w-full"

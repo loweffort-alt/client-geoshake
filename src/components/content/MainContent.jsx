@@ -8,12 +8,8 @@ import LinkDenied from "./LinkDenied";
 const MainContent = () => {
   const [apiData, setApiData] = React.useState(null);
   const [activeIndex, setActiveIndex] = React.useState(false);
-  const [link, setLink] = React.useState("http://127.0.0.1:3000");
+  const [link, setLink] = React.useState("http://127.0.0.1:3000/api/features");
   const [showData, setShowData] = React.useState(false);
-
-  function updateLink(newLink) {
-    setLink(newLink);
-  }
 
   React.useEffect(() => {
     const fetchData = async (link) => {
@@ -27,7 +23,7 @@ const MainContent = () => {
       }
     };
 
-    if (link.startsWith("http://127.0.0.1:3000/api/features")) {
+    if (true) {
       fetchData(link);
       setShowData(true);
       console.log("eureka");
@@ -50,7 +46,7 @@ const MainContent = () => {
 
   return (
     <section className="w-full">
-      <Search updateLink={updateLink} />
+      <Search />
       <Metadata dataAmount={dataAmount} totalDataAmount={totalDataAmount} />
       <div className="overflow-y-auto h-screen">
         {showData ? (

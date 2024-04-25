@@ -10,7 +10,7 @@ const LinkDenied = () => {
           El link proporcionado no existe o no es compatible con esta web,
           intenta copiando y pegando estas rutas:
         </p>
-        <ul class="max-w-md space-y-1 text-gray-500 list-disc list-inside">
+        <ul className="max-w-md space-y-1 text-gray-500 list-disc list-inside">
           <li>/api/features</li>
           <li>/api/features?page=1&per_page=10</li>
           <li>/api/features?page=1&per_page=1000.</li>
